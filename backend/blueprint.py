@@ -77,7 +77,7 @@ def get_areas_stat(simplify_level, type_code):
     if ("selectedFamille") in params and (params["selectedFamille"] != ""):
         x = x + """AND t.famille = '""" + params["selectedFamille"] + """' """
     if ("taxon") in params and (params["taxon"] != ""):
-        x = x + """AND t.cd_ref = """ + params["taxon"] + """ """
+        x = f"""{x}AND t.cd_ref = """ + params["taxon"] + """ """
     if ("selectedGroup1INPN") in params and (params["selectedGroup1INPN"] != ""):
         x = x + """AND t.group1_inpn = '""" + params["selectedGroup1INPN"] + """' """
     if ("selectedGroup2INPN") in params and (params["selectedGroup2INPN"] != ""):
