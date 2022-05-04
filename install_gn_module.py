@@ -22,7 +22,7 @@ def write_in_cron_tab():
         Fonction qui écrit dans le cron tab la commande
             nocturne de rafraichissement 
     """
-    cron_cmd = str(GN_BACKEND_DIR) + "/venv/bin/geonature gn_dashboard_refresh_vm"
+    cron_cmd = f"{str(GN_BACKEND_DIR)}/venv/bin/geonature gn_dashboard_refresh_vm"
     cron_cmt = "gn_dashboard cron job"
 
     cron = CronTab(user=True)
@@ -36,6 +36,6 @@ def write_in_cron_tab():
     # every day at 2h : 0 2 * * *
     job.hour.on(2)
     job.minute.on(0)
-    
+
     # Ecriture dans cron tab
     cron.write()
